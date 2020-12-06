@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DAILYMAX - Shopping</title>
+        
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+        <link rel="stylesheet" href="styles/helpers.css">
+        <link rel="stylesheet" href="https://use.typekit.net/fmt2tdk.css">
+		<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+        <!--<link rel="stylesheet" href="styles/debug.css">-->
+  </head>
+
+    <style>
+
+        #background {
+	        background-image:
+                linear-gradient(180deg, rgba(35,35,35,1) 0%, rgba(47,47,47,1) 10%, rgba(97,97,97,0) 99%),
+                url('images/photo_maxime_header.jpg');
+            background-size: cover ;
+            background-position: center;
+        }
+
+        .titre {
+            font-family: sofia-pro, sans-serif; 
+            font-weight: 700; 
+            font-style: normal;
+        }
+
+        .paragraphe {
+            font-family: sofia-pro, sans-serif; 
+            font-weight: 400; 
+            font-style: normal; 
+            color: #707070;
+        }
+
+        .notification {
+            border-radius: 20px;
+        }
+
+        .produit {
+            border-radius: 20px 20px 0 0;
+        }
+
+
+        .colonne {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .navbar-burger {
+            color: white;
+        }
+
+        
+
+        @media (max-width: 640px) {
+            #logo {
+                padding: 0 0 0 20px;
+            }
+        }
+
+
+
+       
+    
+    </style>
+
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+        });
+        });
+        }
+
+        });
+
+    </script>
+
+
+
+  <body>
+
+    <section class="hero is-fullheight is-fullheight-with-navbar" id="background">
+            <div class="hero-head">
+                <div class="container">
+                    <nav class="navbar is-shadowless" role="navigation" aria-label="main navigation">
+                        <div class="navbar-brand">
+                            <img id="logo" src="images/logo-blanc.png" style="width: 150px; height: auto;">
+
+                            <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                              </a>
+                        </div>
+                        <div class="navbar-menu" id="navMenu">
+                            <div class="navbar-start"></div>
+                            <div class="navbar-end">
+                                <div class="navbar-item is-white">
+                                    <a style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;">À propos</a>
+                                </div>
+                                <div class="navbar-item">
+                                    <a class="button is-rounded is-white" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal;">Acheter</a>
+                                </div>
+                            </div>
+                        </div>    
+                    </nav>
+                </div> 
+            </div> 
+
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title" style="font-family: sofia-pro, sans-serif; font-weight: 900; font-style: normal; font-size: 60px; color: white;">Une dose d'énergie sur </br>votre produit DAILYMAX</h1>
+                </div>
+            </div>
+     </section>
+
+     <section class="hero is-white is-medium">
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns is-vcentered">
+              
+                    <div class="column">
+                        <figure class="image">
+                            <img src="images/photo_maxime.jpg" style="width: 400px; height: auto;">
+                        </figure>          
+                    </div>
+                    <div class="column is-three-fifths">
+                        <h2 class="title is-3 titre">Lorem ipsum</h2>
+                        <div class="content paragraphe">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim semper nunc nec faucibus. 
+                        Aliquam erat volutpat. Pellentesque fringilla non sapien in malesuada. Mauris ut massa orci. 
+                        Aliquam et pretium enim, venenatis interdum magna. Suspendisse gravida sodales dolor. 
+                        Suspendisse quis sapien ullamcorper, feugiat sem in, hendrerit magna. 
+                        Quisque accumsan, metus et convallis feugiat, tortor lacus sodales nisi, nec semper tellus turpis ac quam. </p>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet</li>
+                            <li>Consectetur adipiscing elit</li>
+                            <li>Donec dignissim semper nunc nec faucibus</li>
+                            <li>Aliquam erat volutpat</li>
+                        </ul>   
+                        </div>
+                        <button class="button is-rounded is-black" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;">Acheter</button>
+                    </div>
+                </div>    
+          
+        </div>
+      </section>
+
+      <section class="section has-background-light">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <article class="media notification is-white">
+                        <figure class="media-left">
+                            <span class="icon is-medium">
+                                <i class="fab fa-2x fas fa-flag"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <h1 class="title is-size-4 titre">Lorem ipsum </h1>
+                                <p class="is-size-5 paragraphe">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim semper 
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="column">
+                    <article class="media notification is-white">
+                        <figure class="media-left">
+                            <span class="icon is-medium">
+                                <i class="fas fa-2x fas fa-flag"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <h1 class="title is-size-4 titre">Lorem ipsum</h1>
+                                <p class="is-size-5 paragraphe">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim semper 
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="column">
+                    <article class="media notification is-white">
+                        <figure class="media-left">
+                            <span class="icon is-medium">
+                                <i class="fas fa-2x fas fa-flag"></i>
+                            </span>
+                        </figure>
+                        <div class="media-content">
+                            <div class="content">
+                                <h1 class="title is-size-4 titre">Lorem ipsum</h1>
+                                <p class="is-size-5 paragraphe">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim semper 
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+     </section>
+
+
+
+
+
+     <section class="hero is-white is-large ">
+        <div class="hero-body" style="padding: 150px 24px 150px 24px;">
+            <div class="container">
+
+
+
+                <h2 class="title is-3 titre"  style="text-align: center;">La boutique</h2>
+                <div class="content paragraphe"  style="text-align: center; margin-bottom: 100px;">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </br>Donec dignissim semper nunc nec faucibus. 
+                        Aliquam erat volutpat. Pellentesque fringilla non sapien in malesuada. </p>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="columns">
+                    <div class="column">
+                        <article class="media notification is-paddingless">
+                            <div class="media-content">
+                                <figure class="image">
+                                    <img class="produit" src="images/teeshirt.jpg">
+                                </figure>
+                                <div class="content" style="padding: 20px 20px 30px 20px;">
+                                    <h1 class="title is-size-4 titre">Tee shirt</h1>
+                                    <p class="is-size-5 paragraphe">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim semper 
+                                    </p>      
+                                <div class="colonne">
+                                    <p class="titre is-marginless" style="font-size: 20px;">25,00€</p>
+                                    <button class="button is-rounded is-black" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;">Acheter</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="column">
+                        <article class="media notification is-paddingless">
+                            <div class="media-content">
+                                <figure class="image">
+                                    <img class="produit" src="images/tasse.jpg">
+                                </figure>
+                                <div class="content" style="padding: 20px 20px 30px 20px;">
+                                    <h1 class="title is-size-4 titre">Mug</h1>
+                                    <p class="is-size-5 paragraphe">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim semper 
+                                    </p>      
+                                <div class="colonne">
+                                    <p class="titre is-marginless" style="font-size: 20px;">25,00€</p>
+                                    <button class="button is-rounded is-black" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;">Acheter</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="column">
+                        <article class="media notification is-paddingless">
+                            <div class="media-content">
+                                <figure class="image">
+                                    <img class="produit" src="images/masque.jpg">
+                                </figure>
+                                <div class="content" style="padding: 20px 20px 30px 20px;">
+                                    <h1 class="title is-size-4 titre">Masque</h1>
+                                    <p class="is-size-5 paragraphe">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim semper 
+                                    </p>      
+                                <div class="colonne">
+                                    <p class="titre is-marginless" style="font-size: 20px;">25,00€</p>
+                                    <button class="button is-rounded is-black" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;">Acheter</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <img src="images/logo-noir.png" style="width: 150px; height: auto;">
+        </div>
+      </footer>
+
+
+
+  </body>
+<html>
+
+
+
