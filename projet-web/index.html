@@ -59,14 +59,22 @@
 
         
 
-        @media (max-width: 640px) {
+        @media (max-width: 767px) {
             #logo {
                 padding: 0 0 0 20px;
             }
         }
 
+        @media (max-width: 767px) {
+            .reverse-columns {
+            flex-direction: column-reverse;
+            display: flex;
+         }
+        }
 
-
+        .modal-card {
+            margin-top: 200px;
+        }
        
     
     </style>
@@ -76,15 +84,15 @@
 
         document.addEventListener('DOMContentLoaded', () => {
 
-        // Get all "navbar-burger" elements
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-        // Check if there are any navbar burgers
-        if ($navbarBurgers.length > 0) {
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
 
-        // Add a click event on each of them
-        $navbarBurgers.forEach( el => {
-        el.addEventListener('click', () => {
+            // Add a click event on each of them
+            $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
 
             // Get the target from the "data-target" attribute
             const target = el.dataset.target;
@@ -94,11 +102,12 @@
             el.classList.toggle('is-active');
             $target.classList.toggle('is-active');
 
-        });
-        });
-        }
+         });
+         });
+         }
 
         });
+
 
     </script>
 
@@ -123,10 +132,10 @@
                             <div class="navbar-start"></div>
                             <div class="navbar-end">
                                 <div class="navbar-item is-white">
-                                    <a style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;">À propos</a>
+                                    <a href="#apropos" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;">À propos</a>
                                 </div>
                                 <div class="navbar-item">
-                                    <a class="button is-rounded is-white" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal;">Acheter</a>
+                                    <a class="button is-rounded is-white" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal;" id="myBtn">Acheter</a>
                                 </div>
                             </div>
                         </div>    
@@ -141,12 +150,24 @@
             </div>
      </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
      <section class="hero is-white is-medium">
         <div class="hero-body">
           <div class="container">
-            <div class="columns is-vcentered">
+            <div class="columns is-vcentered reverse-columns">
               
-                    <div class="column">
+                    <div class="column" id="apropos">
                         <figure class="image">
                             <img src="images/photo_maxime.jpg" style="width: 400px; height: auto;">
                         </figure>          
@@ -166,7 +187,7 @@
                             <li>Aliquam erat volutpat</li>
                         </ul>   
                         </div>
-                        <button class="button is-rounded is-black" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;">Acheter</button>
+                        <button class="button is-rounded is-black" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;" id="myBtn">Acheter</button>
                     </div>
                 </div>    
           
@@ -268,7 +289,7 @@
                                     </p>      
                                 <div class="colonne">
                                     <p class="titre is-marginless" style="font-size: 20px;">25,00€</p>
-                                    <button class="button is-rounded is-black" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;">Acheter</button>
+                                    <button class="button is-rounded is-black" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;" id="myBtn">Acheter</button>
                                 </div>
                             </div>
                         </article>
@@ -287,7 +308,7 @@
                                     </p>      
                                 <div class="colonne">
                                     <p class="titre is-marginless" style="font-size: 20px;">25,00€</p>
-                                    <button class="button is-rounded is-black" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;">Acheter</button>
+                                    <button class="button is-rounded is-black" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;" id="myBtn">Acheter</button>
                                 </div>
                             </div>
                         </article>
@@ -306,7 +327,7 @@
                                     </p>      
                                 <div class="colonne">
                                     <p class="titre is-marginless" style="font-size: 20px;">25,00€</p>
-                                    <button class="button is-rounded is-black" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;">Acheter</button>
+                                    <button class="button is-rounded is-black" style="font-family: sofia-pro, sans-serif; font-weight: 500; font-style: normal; color: white;" id="myBtn">Acheter</button>
                                 </div>
                             </div>
                         </article>
@@ -322,9 +343,39 @@
       </footer>
 
 
+      <div class="modal" id="modal">
+        <div class="modal-background" id="background-popup"></div>
+        <div class="modal-card" id="popup">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Paiement</p>
+            <button class="delete" aria-label="close" id="close"></button>
+          </header>
+          <section class="modal-card-body">
+                
+            <p>produit 1</p>
+            
+            
+            <!-- Content ... -->
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button is-success">Confirmer</button>
+            <button class="button" id="cancel">Annuler</button>
+          </footer>
+        </div>
+      </div>
+
+
+    <script src="scripts/script.js"></script>
+
+
+
+
+
+
+   
 
   </body>
-<html>
+</html>
 
 
 
